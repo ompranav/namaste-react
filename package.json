@@ -1,0 +1,24 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Namaste React by Om Pranav ",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/ompranav/namaste-react)"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Om Pranav",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "browserslist" : [
+    "last 10 versions"
+  ]
+}
