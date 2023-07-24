@@ -2,8 +2,9 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "Namaste React by Om Pranav ",
-  
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel buld index.html",
     "test": "jest"
   },
   "repository": {
@@ -16,9 +17,14 @@
   "author": "Om Pranav",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
   },
-  "browserslist" : [
+  "browserslist": [
     "last 10 versions"
-  ]
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
