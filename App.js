@@ -22,14 +22,15 @@ const Header = () => {
     )
 }
 
-const RestaurantCard =() => {
+const RestaurantCard =(props) => {
+    console.log(props);
     return (
         <div className="res-card">
             <img className ="res-logo" src = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/xqwpuhgnsaf18te7zvtv" />
-            <h3>Meghana Foods</h3>
+            <h3>{ props.resName}</h3>
            
-            <h4>4.4 Star</h4>
-            <h4>15 minutes</h4>
+            <h4>{props.cuisines}</h4>
+            <h4>{props.ratings}</h4>
 
         </div>
     )
@@ -40,27 +41,17 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
+                <RestaurantCard  
+                resName ="Meghana Foods"
+                cuisines = "Biryani "
+                ratings = "4.4 star"
+                />
+                <RestaurantCard 
+                resName = "KFC"
+                cuisines = "Burger"
+                ratings = "4 star"
+                />
+                
                 
                 
             </div>
