@@ -34,9 +34,12 @@
     border: 1px solid black;
     cursor: pointer;
 }
-.search {
-    padding: 10px;
+.filter {
+    cursor: pointer;
+    margin: 10px;
+    
 }
+
 
 .res-logo {
     width :100%;
