@@ -27,6 +27,7 @@
     padding :5px;
     width :200px;
     height :400px;
+    margin-top: 2px;
    
 }
 
@@ -50,4 +51,24 @@
     display: flex;
     flex-wrap :wrap;
     justify-content: space-between;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card{
+    background-color: rgba(148, 146, 146, 0.829);
+    padding :5px;
+    width :200px;
+    height :400px; 
+    margin :2px
+    
+}
+
+.login{
+    padding: 10px;
+    margin: 10px;
+    font-size: 36px;
 }
