@@ -38,7 +38,10 @@
 .filter {
     cursor: pointer;
     margin: 10px;
-    
+    display: flex;
+    margin-right: 20px;
+    margin-left: 20px;
+    white-space: 20px;    
 }
 
 
@@ -71,4 +74,9 @@
     padding: 10px;
     margin: 10px;
     font-size: 36px;
+}
+
+.filter-btn {
+    margin-left: 20px;
+
 }
