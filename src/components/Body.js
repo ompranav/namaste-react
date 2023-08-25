@@ -1,16 +1,16 @@
 import RestaurantCard from "./RestaurantCard";
+import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurant, setlistOfRestaurant] = useState([]);
-  const [filteredRestaurant , setfilteredRestaurant] = useState([]);
+  const [filteredRestaurant, setfilteredRestaurant] = useState([]);
 
-  const [searchText , setsearchText]= useState("");
+  const [searchText, setsearchText] = useState("");
 
-  console.log("body rendered ");
-
+  //console.log("body rendered ");
 
   useEffect(() => {
     fetchData();
@@ -22,9 +22,15 @@ const Body = () => {
     );
 
     const json = await data.json();
-    console.log(json);
-    setlistOfRestaurant(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-    setfilteredRestaurant(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    //console.log(json);
+    setlistOfRestaurant(
+      json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+    setfilteredRestaurant(
+      json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
   };
 
   return listOfRestaurant.length === 0 ? (
@@ -33,30 +39,29 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-            <input
-             type="text"
-             className="search-box" 
-             value = {searchText}
-             onChange={(e)=> {
-                setsearchText(e.target.value);
-              }} 
-            />
-            <button 
-              onClick={()=>{
-                //fiter the res card and update UI 
-                //search text
-                console.log(searchText);
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              //fiter the res card and update UI
+              //search text
+              //console.log(searchText);
 
-                const filteredRestaurant =listOfRestaurant.filter(
-                  (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
-                );
+              const filteredRestaurant = listOfRestaurant.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
 
-                setfilteredRestaurant(filteredRestaurant);
-
-              }}
-             >Search
-            </button>
-
+              setfilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
         </div>
         <button
           className="filter-btn"
@@ -72,7 +77,13 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link 
+            key={restaurant.info.id}
+            to={"/restaurant/"+restaurant.info.id}
+          >
+            <RestaurantCard  resData={restaurant} />
+          </Link>
+          
         ))}
         ;
       </div>
