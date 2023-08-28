@@ -72,3 +72,14 @@
 .filter-btn {
   margin-left: 20px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.user-card-class{
+    padding: 10px;
+    border: 1px solid black;
+}
+
